@@ -8,6 +8,7 @@
   --neversink-mono-font: 'Fira Code', monospace;
   --neversink-quote-font: 'Fira Code', monospace;
   --font-mono: 'Courier New', Courier, monospace;
+  color-scheme: light only; /* prevent browser dark mode auto-adjustments */
   @apply neversink-white-scheme; /* apply the default white scheme everywhere */
 }
 
