@@ -5,25 +5,26 @@ import { onSlideEnter, useSlideContext } from '@slidev/client'
 const { $renderContext } = useSlideContext()
 const props = defineProps({
   speed: {
+    type: Number,
     default: 0.5,
   },
   loop: {
-    default: false,
+    type: Boolean,
+    default: true,
   },
 })
 
 const containerRef = ref(null)
 const scrollPosition = ref(0)
-const isScrolling = ref(false)
 
 let animationFrameId = null
 
 const scroll = () => {
   scrollPosition.value -= props.speed
   if (Math.abs(scrollPosition.value) >= 550) {
-    if (props.loop.value) {
-      console.log('resetting loop', props.loop.value)
+    if (props.loop) {
       resetScroll()
+      animationFrameId = requestAnimationFrame(scroll)
     } else {
       stopScrolling()
       return
@@ -40,34 +41,29 @@ const startScrolling = () => {
 const stopScrolling = () => {
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
+    animationFrameId = null
   }
 }
 
 const resetScroll = () => {
-  scrollPosition.value = 480 //containerRef.value.offsetHeight * 2.5
+  scrollPosition.value = 480
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
+    animationFrameId = null
   }
 }
 
-onMounted(() => {
-  console.log('mounted')
-  // Reset scrolling when entering the slide
-  onSlideEnter(() => {
-    console.log('context ', $renderContext.value)
-    if (['slide', 'presenter'].includes($renderContext.value)) {
-      console.log('onSlideEnter')
-      resetScroll()
-      console.log('starting scrolling')
-      startScrolling()
-    }
-  })
+// Must be called in setup scope
+onSlideEnter(() => {
+  if (['slide', 'presenter'].includes($renderContext.value)) {
+    stopScrolling()
+    resetScroll()
+    startScrolling()
+  }
 })
 
 onUnmounted(() => {
-  if (animationFrameId) {
-    cancelAnimationFrame(animationFrameId)
-  }
+  stopScrolling()
 })
 </script>
 
@@ -81,10 +77,9 @@ onUnmounted(() => {
 
 <style scoped>
 .scroll-container {
-  height: 100vh; /* Use full viewport height */
+  height: 100vh;
   overflow: hidden;
   position: relative;
-  cursor: pointer;
 }
 
 .scroll-content {
