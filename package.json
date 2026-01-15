@@ -44,7 +44,7 @@
   },
   "homepage": "https://gureckis.github.io/slidev-theme-neversink/",
   "slidev": {
-    "colorSchema": "light",
+    "colorSchema": "both",
     "highlighter": "all"
   },
   "devDependencies": {

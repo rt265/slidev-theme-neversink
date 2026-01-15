@@ -1,5 +1,5 @@
 ---
-colorSchema: light
+colorSchema: auto
 layout: cover
 routerMode: hash
 title: Base Template

@@ -159,6 +159,12 @@ html.dark {
   .slidev-layout {
     color: #d0d0d0;
   }
+
+  /* inline code blocks in dark mode */
+  .slidev-layout :not(pre) > code {
+    background: #334155; /* slate-700 */
+    color: #e2e8f0; /* slate-200 */
+  }
 }
 
 html:not(.dark) {
