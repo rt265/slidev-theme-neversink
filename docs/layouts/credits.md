@@ -2,7 +2,7 @@
 
 ## Description
 
-The `layout: credits` make a scrolling credits slide simliar to the end of a movive. The slide will automatically scroll the content up the screen. The actual logic for the scrolling is handled by the [CreditScroll component](/components/creditscroll).
+The `layout: credits` makes a scrolling credits slide similar to the end of a movie. The slide will automatically scroll the content up the screen. The actual logic for the scrolling is handled by the [CreditScroll component](/components/creditscroll).
 
 ## Frontmatter
 

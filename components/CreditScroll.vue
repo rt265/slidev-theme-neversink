@@ -10,7 +10,7 @@ const props = defineProps({
   },
   loop: {
     type: Boolean,
-    default: true,
+    default: false,
   },
 })
 
