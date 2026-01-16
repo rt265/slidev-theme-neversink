@@ -28,6 +28,7 @@ export default defineConfig({
           { text: 'Getting Started', link: '/getting-started' },
           { text: 'Markdown Features', link: '/markdown' },
           { text: 'Colors Schemes', link: '/colors' },
+          { text: 'Dark Mode', link: '/dark-mode' },
           { text: 'Styling', link: '/styling' },
           { text: 'Branding', link: '/branding' },
           {

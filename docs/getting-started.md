@@ -24,6 +24,7 @@ If you are new to Slidev highly recommend you check out the [Slidev documentatio
 
 - [Markdown features](markdown.md) - special addons to the Slidev markdown syntax
 - [Color schemes](colors.md) - the color schemes available in Neversink
+- [Dark mode](dark-mode.md) - how to enable and use dark mode in your presentations
 - [Branding](branding.md) - how to customize the theme to your brand/logos
 - [Styling](styling.md) - the custom CSS classes available in Neversink
 - [Custom layouts](layouts.md) - the custom slide layouts available in Neversink
