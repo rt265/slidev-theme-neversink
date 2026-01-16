@@ -166,3 +166,23 @@
   color: var(--neversink-text-color);
   border-color: var(--neversink-border-color);
 }
+
+/* Slide margin/padding modifiers - apply to .slidev-layout elements */
+.ns-c-tight-margin.slidev-layout,
+.slidev-layout.ns-c-tight-margin {
+  padding-top: 0.8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.ns-c-tighter-margin.slidev-layout,
+.slidev-layout.ns-c-tighter-margin {
+  padding-top: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ns-c-no-margin.slidev-layout,
+.slidev-layout.ns-c-no-margin {
+  padding: 0;
+}

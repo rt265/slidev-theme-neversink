@@ -1324,6 +1324,89 @@ Result:
 
 ---
 layout: default
+title: Slide Margins - Normal
+---
+
+# Slide Margins: `normal` (default)
+
+Sometimes you need more space on a slide. Use the `margin` frontmatter option to control slide padding.
+
+- This slide uses the default `margin: normal`
+- Notice the standard padding around the content
+- Good for most slides with typical content
+
+```yaml
+---
+layout: default
+margin: normal  # or just omit this line
+---
+```
+
+---
+layout: default
+margin: tight
+title: Slide Margins - Tight
+---
+
+# Slide Margins: `tight`
+
+This slide uses `margin: tight` for reduced padding.
+
+- More horizontal and vertical space for content
+- Useful when you need to fit more on a slide
+- Notice how the content extends closer to the edges
+
+```yaml
+---
+layout: default
+margin: tight
+---
+```
+
+---
+layout: default
+margin: tighter
+title: Slide Margins - Tighter
+---
+
+# Slide Margins: `tighter`
+
+This slide uses `margin: tighter` for even smaller margins.
+
+- Maximum content space while still having some padding
+- Good for dense information or larger diagrams
+- Compare to the previous slides to see the difference
+
+```yaml
+---
+layout: default
+margin: tighter
+---
+```
+
+---
+layout: default
+margin: none
+title: Slide Margins - None
+---
+
+# Slide Margins: `none`
+
+This slide uses `margin: none` to remove all padding.
+
+- Content goes edge-to-edge
+- Useful for full-bleed images or custom layouts
+- Be careful with readability near edges
+
+```yaml
+---
+layout: default
+margin: none
+---
+```
+
+---
+layout: default
 title: Lines
 ---
 

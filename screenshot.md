@@ -710,7 +710,7 @@ dragPos:
   "'admon'": 55,300,287,106
 ---
 
-<Admonition title="V-draggable" color='teal-light' width="300px" v-drag="[93,303,300,145,-14]">
+<Admonition title="Moveable" color='teal-light' width="300px" v-drag="[93,303,300,145,-14]">
 If you want to `v-drag` an admonition, you should set the width to a fixed value.
 </Admonition>
 
@@ -871,4 +871,92 @@ title: QR Codes
 Result:
 
 <QRCode value="https://gureckislab.org" :size="200" render-as='svg'/>
+
+---
+layout: default
+title: Margins - Normal
+---
+
+# Slide Margins: `normal` (default)
+
+This slide uses the default margins. Notice the standard padding around all content.
+
+- First bullet point with some text
+- Second bullet point with more content
+- Third point to show spacing
+
+```yaml
+---
+layout: default
+# margin: normal (default, can be omitted)
+---
+```
+
+---
+layout: default
+margin: tight
+title: Margins - Tight
+---
+
+# Slide Margins: `tight`
+
+This slide uses `margin: tight` for reduced padding. More room for content!
+
+- First bullet point with some text
+- Second bullet point with more content
+- Third point to show spacing
+- Fourth point - notice we can fit more
+
+```yaml
+---
+layout: default
+margin: tight
+---
+```
+
+---
+layout: default
+margin: tighter
+title: Margins - Tighter
+---
+
+# Slide Margins: `tighter`
+
+This slide uses `margin: tighter` for even smaller margins. Maximum content space.
+
+- First bullet point with some text
+- Second bullet point with more content
+- Third point to show spacing
+- Fourth point - even more room now
+- Fifth point fits easily
+
+```yaml
+---
+layout: default
+margin: tighter
+---
+```
+
+---
+layout: default
+margin: none
+title: Margins - None
+---
+
+# Slide Margins: `none`
+
+This slide uses `margin: none` to remove all padding. Content goes edge-to-edge.
+
+- First bullet point with some text
+- Second bullet point with more content
+- Third point to show spacing
+- Fourth point - maximum space
+- Fifth point - be careful with readability at edges
+
+```yaml
+---
+layout: default
+margin: none
+---
+```
 

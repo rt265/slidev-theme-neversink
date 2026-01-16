@@ -58,7 +58,91 @@ If you want to make bullets a little closer together to make spaceadd the `class
 </div>
 ```
 
-Other options are `ns-c-tight` and `ns-c-supertight`.
+Other options are `ns-c-verytight` and `ns-c-supertight`.
+
+## Slide Margins
+
+Sometimes you need more space on a slide to fit extra content. Neversink provides two ways to reduce slide margins:
+
+### Frontmatter Option
+
+Most layouts support a `margin` frontmatter option:
+
+```md
+---
+layout: default
+margin: tight
+---
+```
+
+| Value | Description | Top Padding | Side Padding |
+|-------|-------------|-------------|--------------|
+| `normal` | Default margins (no change) | 1.8rem | default |
+| `tight` | Reduced padding for more content space | 0.8rem | 1.5rem |
+| `tighter` | Even smaller margins | 0.4rem | 1rem |
+| `none` | Remove all padding | 0 | 0 |
+
+This works with layouts: `default`, `full`, `section`, `top-title`, `top-title-two-cols`, `side-title`, and `two-cols-title`.
+
+### Visual Comparison
+
+Here's how each margin setting affects slide content:
+
+<div class="flex flex-wrap gap-4">
+<div class="w-[48%]">
+
+**`margin: normal`** (default)
+
+<img src="/screenshots/39.png" alt="normal margins" class="screenshot" />
+
+</div>
+<div class="w-[48%]">
+
+**`margin: tight`**
+
+<img src="/screenshots/40.png" alt="tight margins" class="screenshot" />
+
+</div>
+<div class="w-[48%]">
+
+**`margin: tighter`**
+
+<img src="/screenshots/41.png" alt="tighter margins" class="screenshot" />
+
+</div>
+<div class="w-[48%]">
+
+**`margin: none`**
+
+<img src="/screenshots/42.png" alt="no margins" class="screenshot" />
+
+</div>
+</div>
+
+### CSS Classes
+
+You can also apply margin classes directly to elements:
+
+| Class | Effect |
+|-------|--------|
+| `ns-c-tight-margin` | Reduced padding (same as `margin: tight`) |
+| `ns-c-tighter-margin` | Even smaller margins (same as `margin: tighter`) |
+| `ns-c-no-margin` | Remove all padding (same as `margin: none`) |
+
+Example using a class on a div:
+
+```html
+<div class="ns-c-tight-margin">
+  Content with reduced margins
+</div>
+```
+
+### When to Use Each Option
+
+- **`normal`**: Most slides - good balance of whitespace and content
+- **`tight`**: When you need a little extra room for one more bullet point or a slightly larger image
+- **`tighter`**: For data-heavy slides, large tables, or detailed diagrams
+- **`none`**: Full-bleed images, custom layouts, or when you need absolute control over positioning
 
 ## Centering content
 

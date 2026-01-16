@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { computed } from 'vue'
-import { compute_alignment, compute_column_size } from '../layoutHelper'
+import { compute_alignment, compute_column_size, compute_margin_class } from '../layoutHelper'
 
 const props = defineProps({
   side: {
@@ -14,6 +14,9 @@ const props = defineProps({
   },
   align: {
     default: 'auto',
+  },
+  margin: {
+    default: 'normal',
   },
 })
 
@@ -44,6 +47,10 @@ const alignment = computed(() => {
 
 const colorscheme = computed(() => {
   return `neversink-${props.color}-scheme`
+})
+
+const marginClass = computed(() => {
+  return compute_margin_class(props.margin)
 })
 </script>
 <template>
@@ -87,7 +94,7 @@ const colorscheme = computed(() => {
         <div class="slidev-layout sidetitle w-full p-6" :class="alignment.l"><slot name="title" /></div>
       </div>
       <div class="column-content">
-        <div class="slidev-layout h-fit w-full" :class="alignment.r">
+        <div class="slidev-layout h-fit w-full" :class="[alignment.r, marginClass]">
           <slot name="content" />
           <slot name="default" />
         </div>
@@ -95,7 +102,7 @@ const colorscheme = computed(() => {
     </div>
     <div v-else class="flex h-full w-full">
       <div class="column-content">
-        <div class="slidev-layout h-fit w-full" :class="alignment.l">
+        <div class="slidev-layout h-fit w-full" :class="[alignment.l, marginClass]">
           <slot name="content" />
           <slot name="default" />
         </div>

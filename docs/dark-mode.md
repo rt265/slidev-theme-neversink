@@ -74,6 +74,7 @@ Slidev provides a built-in `<LightOrDark>` component for showing different conte
 ```
 
 This is useful for:
+
 - Showing different logo versions
 - Displaying images optimized for each mode
 - Any content that needs to differ between modes

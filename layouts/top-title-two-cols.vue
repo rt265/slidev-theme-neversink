@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { computed } from 'vue'
-import { compute_alignment, compute_column_size } from '../layoutHelper'
+import { compute_alignment, compute_column_size, compute_margin_class } from '../layoutHelper'
 
 const props = defineProps({
   columns: {
@@ -11,6 +11,9 @@ const props = defineProps({
   },
   color: {
     default: 'light',
+  },
+  margin: {
+    default: 'normal',
   },
 })
 
@@ -23,6 +26,10 @@ const alignment = computed(() => {
 
 const colorscheme = computed(() => {
   return `neversink-${props.color}-scheme`
+})
+
+const marginClass = computed(() => {
+  return compute_margin_class(props.margin)
 })
 </script>
 <template>
@@ -64,7 +71,7 @@ const colorscheme = computed(() => {
           <slot name="title" />
         </div>
       </div>
-      <div class="slidev-layout toptitle content w-full">
+      <div class="slidev-layout toptitle content w-full" :class="marginClass">
         <div class="flex flex-row h-full w-full">
           <div class="col-left" :class="alignment.l">
             <slot name="left" />
@@ -74,7 +81,7 @@ const colorscheme = computed(() => {
           </div>
         </div>
       </div>
-      <div v-if="$slots.default" class="slidev-layout default h-fit w-full">
+      <div v-if="$slots.default" class="slidev-layout default h-fit w-full" :class="marginClass">
         <slot name="default" />
       </div>
     </div>

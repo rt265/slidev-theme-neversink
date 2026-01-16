@@ -103,6 +103,19 @@ function compute_size(left) {
   return { l: left, r: 12 - left }
 }
 
+export function compute_margin_class(val) {
+  switch (val) {
+    case 'tight':
+      return 'ns-c-tight-margin'
+    case 'tighter':
+      return 'ns-c-tighter-margin'
+    case 'none':
+      return 'ns-c-no-margin'
+    default:
+      return ''
+  }
+}
+
 export function compute_column_size(val) {
   switch (val) {
     case 'is-1':

@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { computed, useSlots } from 'vue'
-import { compute_alignment, compute_column_size } from '../layoutHelper'
+import { compute_alignment, compute_column_size, compute_margin_class } from '../layoutHelper'
 
 const slots = useSlots()
 
@@ -20,6 +20,9 @@ const props = defineProps({
       return ['t', 'b', 'n'].includes(value)
     },
   },
+  margin: {
+    default: 'normal',
+  },
 })
 
 const alignment = computed(() => {
@@ -31,6 +34,10 @@ const colwidth = computed(() => compute_column_size(props.columns))
 
 const colorscheme = computed(() => {
   return `neversink-${props.color}-scheme`
+})
+
+const marginClass = computed(() => {
+  return compute_margin_class(props.margin)
 })
 
 const flexclass = computed(() => {
@@ -88,7 +95,7 @@ const flexclass = computed(() => {
       alignment (<code>t</code> for top, <code>m</code> for middle, <code>b</code> for bottom).
     </p>
   </div>
-  <div v-else class="slidecolor" :class="flexclass + ' ' + colorscheme">
+  <div v-else class="slidecolor" :class="flexclass + ' ' + colorscheme + ' ' + marginClass">
     <div v-if="$slots.title && props.titlepos != 'n'" class="title" :class="alignment.t">
       <slot name="title" />
     </div>
