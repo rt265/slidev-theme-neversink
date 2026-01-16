@@ -62,12 +62,12 @@
   border-radius: 0.4em;
 }
 
-/* inlight code blocks */
-.slidev-layout :not(pre) > code {
+/* inline code blocks (not syntax-highlighted code in pre blocks) */
+.slidev-layout :not(pre) > code:not([class*="language-"]) {
   font-size: 0.9em;
-  background: var(--neversink-bg-code-color);
+  background: var(--neversink-bg-code-color) !important;
   border-radius: var(--slidev-code-radius);
-  color: var(--neversink-fg-code-color);
+  color: var(--neversink-fg-code-color) !important;
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
   padding-left: 0.375rem;

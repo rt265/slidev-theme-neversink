@@ -102,6 +102,7 @@ const generate_color_schemes = (colors) => {
   addScheme('neversink-light-scheme', 'ns-c-lt-scheme', {
     '--neversink-bg-color': colors['gray'][100],
     '--neversink-bg-code-color': colors['gray'][200],
+    '--neversink-fg-code-color': colors['gray'][800],
     '--neversink-fg-color': colors['gray'][800],
     '--neversink-text-color': colors['gray'][800],
     '--neversink-border-color': colors['gray'][800],
@@ -116,6 +117,7 @@ const generate_color_schemes = (colors) => {
       addScheme('neversink-navy-scheme', 'ns-c-nv-scheme', {
         '--neversink-bg-color': '#2a373a',
         '--neversink-bg-code-color': colors['gray'][200],
+        '--neversink-fg-code-color': colors['gray'][800],
         '--neversink-fg-color': colors['gray'][300],
         '--neversink-text-color': colors['gray'][300],
         '--neversink-border-color': colors['gray'][300],
@@ -128,6 +130,7 @@ const generate_color_schemes = (colors) => {
       addScheme('neversink-navy-light-scheme', 'ns-c-nv-lt-scheme', {
         '--neversink-bg-color': colors['gray'][50],
         '--neversink-bg-code-color': colors['gray'][400],
+        '--neversink-fg-code-color': colors['gray'][50],
         '--neversink-fg-color': '#2a373a',
         '--neversink-text-color': '#2a373a',
         '--neversink-border-color': '#2a373a',
