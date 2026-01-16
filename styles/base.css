@@ -145,7 +145,13 @@
 }
 
 html.dark {
-  /* dark mode css here */
+  /* dark mode default CSS variables (for when no scheme class is present) */
+  --neversink-bg-color: #1e293b;
+  --neversink-bg-code-color: #334155;
+  --neversink-fg-code-color: #e2e8f0;
+  --neversink-fg-color: #e2e8f0;
+  --neversink-text-color: #e2e8f0;
+
   .lectureno {
     background-color: #9a9a9a;
     color: hsl(0, 0%, 100%);
@@ -158,12 +164,6 @@ html.dark {
 
   .slidev-layout {
     color: #d0d0d0;
-  }
-
-  /* inline code blocks in dark mode */
-  .slidev-layout :not(pre) > code {
-    background: #334155; /* slate-700 */
-    color: #e2e8f0; /* slate-200 */
   }
 }
 
