@@ -71,7 +71,7 @@ const marginClass = computed(() => {
           <slot name="title" />
         </div>
       </div>
-      <div class="slidev-layout toptitle content w-full" :class="marginClass">
+      <div class="slidev-layout toptitle content w-full flex-1 min-h-0" :class="marginClass">
         <div class="flex flex-row h-full w-full">
           <div class="col-left" :class="alignment.l">
             <slot name="left" />
