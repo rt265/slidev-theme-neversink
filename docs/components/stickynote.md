@@ -16,6 +16,7 @@ The `StickyNote` component is used to create a colored box with an title and con
 - `textAlign` (optional) the text alignment of the content. Default is `left`.
 - `custom` (optional) a custom CSS class to apply to the sticky note content. Default is empty.
 - `customTitle` (optional) a custom CSS class to apply to the sticky note title. Default is `block text-xs font-mono tracking-normal font-bold`.
+- `devOnly` (optional) when set to `true`, the sticky note will only be visible in development mode and will be hidden in production builds and exports. This is useful for personal notes or reminders that shouldn't appear in the final presentation. Default is `false`.
 
 Example:
 
@@ -71,3 +72,18 @@ Another color:
 
 Hello, I'm a **sticky note**.
 </StickyNote>
+
+## Dev-Only Notes
+
+Use the `devOnly` prop to create sticky notes that only appear during development. These are perfect for speaker notes, reminders, or TODOs that you don't want in your exported presentation:
+
+```vue
+<StickyNote color="amber-light" width="180px" title="Note to self" devOnly>
+  Remember to add more examples here before the talk!
+</StickyNote>
+```
+
+When `devOnly` is set to `true`:
+
+- The sticky note is visible when running `slidev dev`
+- The sticky note is **hidden** when running `slidev build` or `slidev export`

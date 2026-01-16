@@ -28,6 +28,16 @@ const props = defineProps({
     type: String,
     default: 'block text-xs font-mono tracking-normal font-bold',
   },
+  devOnly: {
+    // only show in dev mode (useful for notes that shouldn't appear in exports)
+    type: Boolean,
+    default: false,
+  },
+})
+
+const isVisible = computed(() => {
+  if (!props.devOnly) return true
+  return import.meta.env.DEV
 })
 
 const colorscheme = computed(() => {
@@ -48,7 +58,7 @@ const stickyStyles = computed(() => ({
 </script>
 
 <template>
-  <div :class="stickyClasses" :style="stickyStyles">
+  <div v-if="isVisible" :class="stickyClasses" :style="stickyStyles">
     <template v-if="props.title !== ''"
       ><span :class="props.customTitle">{{ props.title }}</span></template
     >

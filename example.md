@@ -1240,6 +1240,30 @@ Hello, I'm also a **sticky note** but I'm customized with a title and a custom c
 
 ---
 layout: default
+title: Dev-Only Sticky Notes
+---
+
+# Dev-Only Sticky Notes
+
+<StickyNote color="rose-light" textAlign="left" width="200px" title="Dev Note" devOnly v-drag="[650,150,200,200]">
+
+This note only appears in **dev mode**! It won't show in exports or production builds.
+</StickyNote>
+
+Use the `devOnly` prop to create sticky notes that only appear during development. These are perfect for speaker notes, reminders, or TODOs that you don't want in your final presentation.
+
+```vue
+<StickyNote color="rose-light" title="Dev Note" devOnly>
+  This note only appears in dev mode!
+</StickyNote>
+```
+
+When `devOnly` is set to `true`:
+- Visible when running `slidev dev`
+- Hidden when running `slidev build` or `slidev export`
+
+---
+layout: default
 title: Kawaii 1
 ---
 
